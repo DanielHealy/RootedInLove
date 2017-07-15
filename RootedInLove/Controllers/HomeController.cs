@@ -23,7 +23,7 @@ namespace RootedInLove.Controllers
         {
             return View();
         }
-
+        [Route("Error")]
         public IActionResult Error()
         {
             return View();

@@ -36,6 +36,7 @@ namespace RootedInLove
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            app.UseStatusCodePagesWithReExecute("/Error");
 
             if (env.IsDevelopment())
             {
