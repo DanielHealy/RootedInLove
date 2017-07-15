@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RootedInLove.Models
 {
@@ -10,7 +11,9 @@ namespace RootedInLove.Models
         public string ImageFile { get; set; }
         public string GooglePlayLink { get; set; }
         public string URLReference { get; set; }
-        public virtual ICollection<Material> Materials { get; set; }
-        public virtual ICollection<Presentation> Presentations { get; set; }
+        [NotMapped]
+        public List<Material> Materials { get; set; }
+        [NotMapped]
+        public List<Presentation> Presentations { get; set; }
     }
 }

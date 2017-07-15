@@ -1,4 +1,5 @@
-﻿namespace RootedInLove.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+namespace RootedInLove.Models
 {
     public class Material
     {
@@ -8,7 +9,11 @@
         public string ImageFile { get; set; }
         public string GooglePlayLink { get; set; }
         public string URLReference { get; set; }
-        public virtual Author Author { get; set; }
-        public virtual Category Category { get; set; }
+        public short Author_ID { get; set; }
+        public short Category_ID { get; set; }
+        [NotMapped]
+        public Author Author { get; set; }
+        [NotMapped]
+        public Category Category { get; set; }
     }
 }
