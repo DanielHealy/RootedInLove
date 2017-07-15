@@ -9,7 +9,7 @@ namespace RootedInLove.Models
         public DbSet<Category> Categories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(@"server=beta.rootedinlove.org;database=RootedInLove;user=ReadOnlyUser;port=3306;password=ReadOnlyUser;");
+            optionsBuilder.UseMySql(@"server=beta.rootedinlove.org;database=Rooted_In_Love;user=ReadOnlyUser;port=3306;password=ReadOnlyUser;");
         }
     }
 }
