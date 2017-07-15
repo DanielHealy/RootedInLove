@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RootedInLove</title>
+    <title>@ViewData["Title"] - Rooted In Love</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -19,31 +19,64 @@
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">RootedInLove</a>
+
+                @Html.ActionLink("Rooted In Love", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("About Dr. James Healy", "About", "Home", new { id = "JamesHealy" }, null)</li>
+                            <li>@Html.ActionLink("About Dr. Madonna Wojtaszek-Healy", "About", "Home", new { id = "MadonnaHealy" }, null)
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer">Materials<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Materials by Dr. James Healy", "Index", "Materials", new { id = "JamesHealy" }, null)</li>
+                            <li>@Html.ActionLink("Materials by Dr. Madonna Wojtaszek-Healy", "Index", "Materials", new { id = "MadonnaHealy" }, null)
+                            <li>@Html.ActionLink("Pricing and Ordering", "Pricing", "Materials")
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer">Presentations<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Presentations by Dr. James Healy", "Index", "Presentations", new { id = "JamesHealy" }, null)</li>
+                            <li>@Html.ActionLink("Presentations by Dr. Madonna Wojtaszek-Healy", "Index", "Presentations", new { id = "MadonnaHealy" }, null)
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.e-junkie.com/ecom/gb.php?c=cart&ejc=2&cl=305985">Shopping Cart</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
     <div class="container body-content">
+        <img src="~/Images/BannerPicture.jpg" class="img-responsive" style="text-align: center; margin-left: auto;
+    margin-right: auto " usemap="#bannermap" />
+        <map name="bannermap">
+            <area shape="rect" coords="0,0,972,38" alt="Materials by Dr. James Healy" href="@Url.Action("Author", "Materials", new {id="JamesHealy"}, null)">
+            <area shape="rect" coords="0,38,195,305" alt="About Dr. James Healy" href="@Url.Action("About", "Home", new {id="JamesHealy"}, null)">
+            <area shape="rect" coords="195,268,1170,304" alt="Materials by Dr. Madonna Wojtaszek-Healy" href="@Url.Action("Author", "Materials", new {id="MadonnaHealy"}, null)">
+            <area shape="rect" coords="972,0,1170,268" alt="About Dr. Madonna Wojtaszek-Healy" href="@Url.Action("About", "Home", new {id="MadonnaHealy"}, null)">
+        </map>
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - RootedInLove</p>
+            <p>&copy; @DateTime.Now.Year - Rooted In Love</p>
         </footer>
     </div>
 
@@ -67,7 +100,13 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    <script src="~/js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+        $('img[usemap]').rwdImageMaps();
+        $(document).ready(function (e) {
+            $('img[usemap]').rwdImageMaps();
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
