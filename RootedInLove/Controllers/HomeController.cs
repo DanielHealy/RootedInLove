@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RootedInLove.Models;
-
+using System.Linq;
 namespace RootedInLove.Controllers
 {
     public class HomeController : Controller
     {
         Context database = new Context();
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult About(string id="JamesHealy")
         {
             Author author =
@@ -30,8 +21,6 @@ namespace RootedInLove.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
