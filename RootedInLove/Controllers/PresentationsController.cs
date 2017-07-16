@@ -27,5 +27,21 @@ namespace RootedInLove.Controllers
 
             return View(author);
         }
+
+        public IActionResult Presentation(string id)
+        {
+            Presentation presentation =
+                 (from seminar in database.Presentations
+                  where seminar.URLReference == id
+                  select seminar).FirstOrDefault();
+
+            if (presentation == null)
+            {
+                return View("Error");
+            }
+            presentation.Author = database.Authors.Find(presentation.Author_ID);
+
+            return View(presentation);
+        }
     }
 }

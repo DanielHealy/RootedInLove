@@ -1,0 +1,21 @@
+@model RootedInLove.Models.Presentation
+@{
+    ViewData["Title"] = Model.Title;
+}
+<div>
+
+    <hr />
+    <p>
+        <h3>@(Model.Title)</h3>
+        <br />
+        by @(Model.Author.FormalName)
+        <br /><br />
+        @(Model.Description)
+    </p>
+    @if (Model.PDF != null)
+    {
+        <p>
+            <a href="~/Documents/@(Model.PDF)" class="btn btn-default" download>Download Full PDF</a>
+        </p>
+    }
+</div>
