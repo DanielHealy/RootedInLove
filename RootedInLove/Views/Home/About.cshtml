@@ -2,27 +2,21 @@
 @{
     ViewData["Title"] = Model.FormalName;
 }
-<h2>@ViewData["Title"]</h2>
 
-<div>
+<section>
     <br />
     <p>
-        <img src="~/Images/@(Model.ImageFile)" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
+        <img src="~/Images/@Model.ImageFile" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
         <br />
         <h3>@Model.FormalName</h3>
         <br />
         @Model.Biography
-        <br /><br />
-    <p>
-        @Html.ActionLink("Materials by " + Model.FormalName, "Index", "Materials", new { id = Model.URLReference }, new { @class = "btn btn-default" })
-    </p>
-    <p>
-        @Html.ActionLink("Presentations by " + Model.FormalName, "Index", "Presentations", new { id = Model.URLReference }, new { @class = "btn btn-default" })
-    </p>
+        <br />
+        <br />
+    <p>@Html.ActionLink("Materials by " + Model.FormalName, "Index", "Materials", new { id = Model.URLReference }, new { @class = "btn btn-default" })</p>
+    <p>@Html.ActionLink("Presentations by " + Model.FormalName, "Index", "Presentations", new { id = Model.URLReference }, new { @class = "btn btn-default" })</p>
     @if (Model.GooglePlayLink != null)
     {
-        <p>
-            <a href="@Model.GooglePlayLink" class="btn btn-default">@Model.FormalName on Google Play</a>
-        </p>
+        <p><a href="@Model.GooglePlayLink" class="btn btn-default">@Model.FormalName on Google Play</a></p>
     }
-</div>
+</section>

@@ -2,20 +2,21 @@
 @{
     ViewData["Title"] = Model.Title;
 }
-<div>
 
-    <hr />
+<section>
     <p>
-        <h3>@(Model.Title)</h3>
+        <hr />
+        <h3>@Model.Title</h3>
         <br />
-        by @(Model.Author.FormalName)
-        <br /><br />
-        @(Model.Description)
+        by @Model.Author.FormalName
+        <br />
+        <br />
+        @Model.Description
     </p>
     @if (Model.PDF != null)
     {
         <p>
-            <a href="~/Documents/@(Model.PDF)" class="btn btn-default" download>Download Full PDF</a>
+            <a href="~/Documents/@Model.PDF" class="btn btn-default" download>Download Full PDF</a>
         </p>
     }
-</div>
+</section>

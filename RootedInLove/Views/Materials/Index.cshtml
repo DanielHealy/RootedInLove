@@ -3,28 +3,23 @@
     ViewData["Title"] = "Materials from "+Model.FormalName;
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<p>Click on an item below for more details</p>
-<div class="row">
-
-    @foreach (var item in Model.Materials)
-    {
-        <div class="col-md-4" style="height:675px;border:ridge">
-            <br />
-            <p>
+<section>
+    <h2>@ViewData["Title"]</h2>
+    <p>Click on an item below for more details</p>
+    <div class="row">
+        @foreach (var item in Model.Materials)
+        {
+            <div class="col-md-4" style="height:675px;border:ridge">
+                <br />
                 <a href='@Url.Action("Material", "Materials", new { id = item.URLReference },null)'>
-                    <img src="~/Images/@(item.ImageFile)" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
+                    <img src="~/Images/@item.ImageFile" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
                 </a>
                 <br />
-
                 <h3>@Html.ActionLink(item.Title, "Material", "Materials", new { id = item.URLReference }, null)</h3>
                 <br />
                 @item.Category.SingularName by @Model.FormalName
-
-            </p>
-
-        </div>
-    }
-</div>
+            </div>
+        }
+    </div>
+</section>
 

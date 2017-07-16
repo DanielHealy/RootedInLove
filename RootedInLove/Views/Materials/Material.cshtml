@@ -3,16 +3,16 @@
     ViewData["Title"] = Model.Title;
 }
 
-<div>
-
-    <hr />
+<section>
     <p>
-        <img src="~/Images/@(Model.ImageFile)" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
+        <hr />
+        <img src="~/Images/@Model.ImageFile" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
         <br />
         <h3>@Model.Title</h3>
         <br />
-        @Model.Category.SingularName) by @Model.Author.FormalName
-        <br /><br />
+        @Model.Category.SingularName by @Model.Author.FormalName
+        <br />
+        <br />
         @Model.Description
     </p>
 
@@ -25,13 +25,14 @@
     </form>
 
     @if (Model.GooglePlayLink != null)
-        {
-        <br /><br />
+    {
         <p>
+            <br />
+            <br />
             This item is also available digitally on Google Play
             <br />
             <a href="@Model.GooglePlayLink"><img src="~/Images/google-play-badge.png" style="max-height:75px" /></a>
         </p>
-        }
+    }
 
-</div>
+</section>

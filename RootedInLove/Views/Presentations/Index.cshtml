@@ -3,24 +3,21 @@
     ViewData["Title"] = "Presentations from "+Model.FormalName;
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<p>Click on an item below for more details</p>
-<div class="row">
-
-    @foreach (var item in Model.Presentations)
-    {
-        <div class="col-md-4" style="height:200px;border:ridge">
-            <br />
-            <p>
-                <br />
-
-                <h3>@Html.ActionLink(item.Title, "Presentation", "Presentations", new { id = item.URLReference }, null)</h3>
-                by @(Model.FormalName)
-                <br />
-
-            </p>
-
-        </div>
-    }
-</div>
+<section>
+    <h2>@ViewData["Title"]</h2>
+    <p>Click on an item below for more details</p>
+    <div class="row">
+        @foreach (var item in Model.Presentations)
+        {
+            <div class="col-md-4" style="height:200px;border:ridge">
+                <p>
+                    <br />
+                    <br />
+                    <h3>@Html.ActionLink(item.Title, "Presentation", "Presentations", new { id = item.URLReference }, null)</h3>
+                    by @Model.FormalName
+                    <br />
+                </p>
+            </div>
+        }
+    </div>
+</section>
