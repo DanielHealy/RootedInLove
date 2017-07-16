@@ -1,0 +1,68 @@
+@model List<RootedInLove.Models.Category>
+@{
+    ViewData["Title"] = "Pricing and Ordering";
+}
+
+    <h2>Pricing</h2>
+
+    <div class="row">
+        <div class="container">
+            <p>All items in a category have the same price and can be combined for a bulk-order discount</p>
+
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4" style="text-align:center">
+                <p>
+                    <hr />
+                    <h4>@(item.SingularName) bulk pricing:</h4>
+                    <br />
+                    $@(((float)item.Price1).ToString("0.00")) for 1 @(item.SingularName)
+                    @if (item.Quantity2 != null)
+                    {
+                        <div> $@(((float) item.Price2).ToString("0.00")) each if you order @(item.Quantity2) or more @(item.PluralName)</div>
+                    }
+                    else
+                    {
+                        <div>No bulk order discount available</div>
+                    }
+                    @if (item.Quantity3 != null)
+                    {
+                        <div>$@(((float)item.Price3).ToString("0.00")) each if you order @(item.Quantity3) or more @(item.PluralName)</div>
+                    }
+                    @if (item.Quantity4 != null)
+                    {
+                        <div>$@(((float)item.Price4).ToString("0.00")) each if you order @(item.Quantity4) or more @(item.PluralName)</div>
+                    }
+                    @if (item.Quantity5 != null)
+                    {
+                        <div>$@(((float)item.Price5).ToString("0.00")) each if you order @(item.Quantity5) or more @(item.PluralName)</div>
+                    }
+                    @if (item.Quantity6 != null)
+                    {
+                        <div>$@(((float)item.Price6).ToString("0.00")) each if you order @(item.Quantity6) or more @(item.PluralName)</div>
+                    }
+                </p>
+            </div>
+        }
+
+    </div>
+    <hr />
+    <div class="row">
+        <div class="container">
+            <h2>Ordering</h2>
+            <p>
+                Online checkout is available for orders made in the United States. Shopping cart service is provided by <a href="https://www.e-junkie.com/">E-Junkie</a> and payment processing is provided by <a href="https://www.paypal.com">
+                    PayPal
+                </a>. Payment can be made by credit card or by PayPal account.
+                <br />
+                <br />
+                If you would prefer to billed for your purchase, orders can be placed by phone or email. Orders placed outside the United States must be arranged by phone or by email<br /><br />
+                Illinois Parishes:<br /> Sales tax is automatically added to orders with Illinois shipping addresses during online checkout. If you are purchasing for a parish, diocese, or other tax-exempt organization in Illinois, please contact Rooted in Love following your order and we will refund your tax amount.
+            </p>
+        </div>
+    </div>
+
+
+
+

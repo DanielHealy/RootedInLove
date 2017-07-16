@@ -55,5 +55,10 @@ namespace RootedInLove.Controllers
             return View(material);
         }
 
+        public ActionResult Pricing()
+        {
+            return View(database.Categories.ToList());
+        }
+
     }
 }
