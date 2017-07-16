@@ -37,5 +37,23 @@ namespace RootedInLove.Controllers
 
             return View(author);
         }
+
+        public IActionResult Material(string id)
+        {
+            Material material =
+                 (from item in database.Materials
+                  where item.URLReference == id
+                  select item).FirstOrDefault();
+
+            if (material == null)
+            {
+                return View("Error");
+            }
+            material.Author = database.Authors.Find(material.Author_ID);
+            material.Category = database.Categories.Find(material.Category_ID);
+
+            return View(material);
+        }
+
     }
 }

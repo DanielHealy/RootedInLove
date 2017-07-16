@@ -14,10 +14,10 @@
         @Model.Biography
         <br /><br />
     <p>
-        @Html.ActionLink("Materials by " + Model.FormalName, "Author", "Materials", new { id = Model.URLReference }, new { @class = "btn btn-default" })
+        @Html.ActionLink("Materials by " + Model.FormalName, "Index", "Materials", new { id = Model.URLReference }, new { @class = "btn btn-default" })
     </p>
     <p>
-        @Html.ActionLink("Presentations by " + Model.FormalName, "Author", "Presentations", new { id = Model.URLReference }, new { @class = "btn btn-default" })
+        @Html.ActionLink("Presentations by " + Model.FormalName, "Index", "Presentations", new { id = Model.URLReference }, new { @class = "btn btn-default" })
     </p>
     @if (Model.GooglePlayLink != null)
     {

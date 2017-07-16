@@ -68,9 +68,9 @@
         <img src="~/Images/BannerPicture.jpg" class="img-responsive" style="text-align: center; margin-left: auto;
     margin-right: auto " usemap="#bannermap" />
         <map name="bannermap">
-            <area shape="rect" coords="0,0,972,38" alt="Materials by Dr. James Healy" href="@Url.Action("Author", "Materials", new {id="JamesHealy"}, null)">
+            <area shape="rect" coords="0,0,972,38" alt="Materials by Dr. James Healy" href="@Url.Action("Index", "Materials", new {id="JamesHealy"}, null)">
             <area shape="rect" coords="0,38,195,305" alt="About Dr. James Healy" href="@Url.Action("About", "Home", new {id="JamesHealy"}, null)">
-            <area shape="rect" coords="195,268,1170,304" alt="Materials by Dr. Madonna Wojtaszek-Healy" href="@Url.Action("Author", "Materials", new {id="MadonnaHealy"}, null)">
+            <area shape="rect" coords="195,268,1170,304" alt="Materials by Dr. Madonna Wojtaszek-Healy" href="@Url.Action("Index", "Materials", new {id="MadonnaHealy"}, null)">
             <area shape="rect" coords="972,0,1170,268" alt="About Dr. Madonna Wojtaszek-Healy" href="@Url.Action("About", "Home", new {id="MadonnaHealy"}, null)">
         </map>
         @RenderBody()

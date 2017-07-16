@@ -1,0 +1,37 @@
+@model RootedInLove.Models.Material
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div>
+
+    <hr />
+    <p>
+        <img src="~/Images/@(Model.ImageFile)" class="img-responsive" style="text-align: center; margin-left: auto; margin-right: auto; max-height:400px" />
+        <br />
+        <h3>@Model.Title</h3>
+        <br />
+        @Model.Category.SingularName) by @Model.Author.FormalName
+        <br /><br />
+        @Model.Description
+    </p>
+
+    <form action="https://www.e-junkie.com/ecom/gb.php?c=cart&cl=305985&i=@(Model.Category.Ejunkie_Code)&ejc=2" method="POST" target="ejejcsingle">
+        <input type="hidden" name="on0" value="Title">
+        <select hidden name="os0">
+            <option value="@Model.Title"></option>
+        </select>
+        <input type="submit" value="Add to Cart" class="btn btn-default"> <br /><br />@Html.ActionLink("Pricing and Ordering Information","Pricing","Materials", new { @class = "btn btn-default" })
+    </form>
+
+    @if (Model.GooglePlayLink != null)
+        {
+        <br /><br />
+        <p>
+            This item is also available digitally on Google Play
+            <br />
+            <a href="@Model.GooglePlayLink"><img src="~/Images/google-play-badge.png" style="max-height:75px" /></a>
+        </p>
+        }
+
+</div>
