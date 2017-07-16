@@ -25,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Materials\" />
+    <Folder Include="Views\Presentations\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
