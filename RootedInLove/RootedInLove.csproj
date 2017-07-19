@@ -7,6 +7,26 @@
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\Documents\HappinessAHabit.pdf" />
+    <Content Include="wwwroot\Documents\HowToStayEngaged.pdf" />
+    <Content Include="wwwroot\Documents\ToWelcomeAndToWitness.pdf" />
+    <Content Include="wwwroot\Images\ABCs.jpg" />
+    <Content Include="wwwroot\Images\BannerPicture.jpg" />
+    <Content Include="wwwroot\Images\Cake.jpg" />
+    <Content Include="wwwroot\Images\Espiritualidad.jpg" />
+    <Content Include="wwwroot\Images\google-play-badge.png" />
+    <Content Include="wwwroot\Images\Happiness.jpg" />
+    <Content Include="wwwroot\Images\JamesHealy.jpg" />
+    <Content Include="wwwroot\Images\Juntos.jpg" />
+    <Content Include="wwwroot\Images\MadonnaHealy.jpg" />
+    <Content Include="wwwroot\Images\Matthew.jpg" />
+    <Content Include="wwwroot\Images\Pastel.jpg" />
+    <Content Include="wwwroot\Images\Spirituality.jpg" />
+    <Content Include="wwwroot\Images\Together.jpg" />
+    <Content Include="wwwroot\Images\Tree.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -26,8 +46,8 @@
   <ItemGroup>
     <Folder Include="Views\Materials\" />
     <Folder Include="Views\Presentations\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\documents\" />
+    <Folder Include="wwwroot\Images\" />
+    <Folder Include="wwwroot\Documents\" />
   </ItemGroup>
 
 </Project>
